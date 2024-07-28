@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article index
+{% endblock %}
+
+{% block body %}
+	<h1>Article index</h1>
+
+	<a href="{{ path('app_admin_article_new') }}" class="detail">Create new</a>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Nom</th>
+				<th>Summary</th>
+				<th>Content</th>
+				<th>CreatedAt</th>
+				<th>UpdatedAt</th>
+				<th>Slug</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for article in articles %}
+				<tr>
+					<td>{{ article.id }}</td>
+					<td>{{ article.nom }}</td>
+					<td>{{ article.summary }}</td>
+					<td>{{ article.content }}</td>
+					<td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+					<td>{{ article.updatedAt ? article.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+					<td>{{ article.slug }}</td>
+					<td class="button-table">
+						<a href="{{ path('app_admin_article_show', {'id': article.id}) }}" class="detail">show</a>
+						<a href="{{ path('app_admin_article_edit', {'id': article.id}) }}" class="detail">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="8">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<div class="pagination">
+		{{ knp_pagination_render(articles) }}
+	</div>
+
+{% endblock %}

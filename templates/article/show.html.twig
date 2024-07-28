@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Détails de l'article
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/article-details.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>{{ article.nom }}</h1>
+    <article>
+        <p data-label="Description:">
+            {{ article.content }}
+        </p>
+        <p data-label="Créé le:">
+            {{ article.createdAt|date('d-m-Y', 'Europe/Paris') }}
+        </p>
+        <p data-label="Mis à jour le:">
+            {{ article.updatedAt|date('d-m-Y', 'Europe/Paris') }}
+        </p>
+    </article>
+</div>
+{% endblock %}
