@@ -107,33 +107,37 @@ class __TwigTemplate_14fe62c1f0c27171e1cf45cff9f6808d extends Template
         } else {
             // line 31
             yield "\t\t\t\t\t<a href=\"";
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+            yield "\" class=\"lien\">Inscription</a>
+\t\t\t\t\t<a href=\"";
+            // line 32
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
             yield "\" class=\"lien\">Accueil</a>
 \t\t\t\t\t<a href=\"";
-            // line 32
+            // line 33
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_api");
             yield "\" class=\"lien\">API articles</a>
 \t\t\t\t\t<a href=\"";
-            // line 33
+            // line 34
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_mentions_legales");
             yield "\" class=\"lien\">Mentions légales</a>
 \t\t\t\t\t<a href=\"";
-            // line 34
+            // line 35
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact");
             yield "\" class=\"lien\">Contact</a>
 \t\t\t\t\t<a href=\"";
-            // line 35
+            // line 36
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             yield "\" class=\"lien\">Connexion</a>
 \t\t\t\t";
         }
-        // line 37
+        // line 38
         yield "\t\t\t</nav>
 \t\t</header>
 \t\t<div class=\"wrapper\"> ";
-        // line 39
-        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
         // line 40
+        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
+        // line 41
         yield "\t\t\t</div>
 \t\t\t<footer>
 \t\t\t\t<div class=\"footer-content\">
@@ -240,7 +244,7 @@ class __TwigTemplate_14fe62c1f0c27171e1cf45cff9f6808d extends Template
         return; yield '';
     }
 
-    // line 39
+    // line 40
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -280,7 +284,7 @@ class __TwigTemplate_14fe62c1f0c27171e1cf45cff9f6808d extends Template
      */
     public function getDebugInfo()
     {
-        return array (  244 => 39,  230 => 13,  220 => 12,  209 => 15,  206 => 12,  196 => 11,  177 => 9,  156 => 6,  137 => 40,  135 => 39,  131 => 37,  126 => 35,  122 => 34,  118 => 33,  114 => 32,  109 => 31,  105 => 29,  100 => 27,  96 => 26,  92 => 25,  88 => 24,  83 => 23,  81 => 22,  76 => 21,  74 => 20,  68 => 16,  66 => 11,  63 => 10,  61 => 9,  58 => 8,  56 => 6,  49 => 1,);
+        return array (  248 => 40,  234 => 13,  224 => 12,  213 => 15,  210 => 12,  200 => 11,  181 => 9,  160 => 6,  141 => 41,  139 => 40,  135 => 38,  130 => 36,  126 => 35,  122 => 34,  118 => 33,  114 => 32,  109 => 31,  105 => 29,  100 => 27,  96 => 26,  92 => 25,  88 => 24,  83 => 23,  81 => 22,  76 => 21,  74 => 20,  68 => 16,  66 => 11,  63 => 10,  61 => 9,  58 => 8,  56 => 6,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -315,6 +319,7 @@ class __TwigTemplate_14fe62c1f0c27171e1cf45cff9f6808d extends Template
 \t\t\t\t\t{% endif %}
 
 \t\t\t\t{% else %}
+\t\t\t\t\t<a href=\"{{ path('app_register') }}\" class=\"lien\">Inscription</a>
 \t\t\t\t\t<a href=\"{{ path('app_home') }}\" class=\"lien\">Accueil</a>
 \t\t\t\t\t<a href=\"{{ path('app_api') }}\" class=\"lien\">API articles</a>
 \t\t\t\t\t<a href=\"{{ path('app_mentions_legales') }}\" class=\"lien\">Mentions légales</a>
